@@ -62,7 +62,7 @@
 
 \title{Problem Set 1}
 \date{Due: February 11, 2024}
-\author{Applied Stats II}
+\author{Idi . Applied Stats II}
 
 
 \begin{document}
@@ -100,6 +100,26 @@ $$p(D \leq x) \frac{\sqrt {2\pi}}{x} \sum _{k=1}^{\infty }e^{-(2k-1)^{2}\pi ^{2}
 	D <- max(abs(empiricalCDF - pnorm(data))) \end{lstlisting}
 
 \vspace{3in}
+
+\subsection{Answer Q1}
+\noindent Here but text answer
+
+\begin{Verbatim}
+	this is just  a test
+	\\\\\\\\
+	> result <- ks_test_normal(cauchy_data)
+	> head(result) #blabla
+	$test_statistic
+	[1] 0.1439423
+	
+	$p_value
+	[1] 1.379198e-52
+	
+	$conclusion
+	[1] "Reject Null Hypothesis"
+\end{Verbatim}
+
+\includegraphics{test.pdf}
 
 \section*{Question 2}
 \noindent Estimate an OLS regression in \texttt{R} that uses the Newton-Raphson algorithm (specifically \texttt{BFGS}, which is a quasi-Newton method), and show that you get the equivalent results to using \texttt{lm}. Use the code below to create your data.
