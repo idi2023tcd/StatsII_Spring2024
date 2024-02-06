@@ -1,7 +1,8 @@
 library(tidyverse)
 library(stargazer)
-
-data <- read_csv("Trajche's desktop file path", 
+#
+####
+data <- read_csv("C:/NewGithubFolder/StatsII_Spring2024/tutorials/tutorial01/tutorial1_data.csv", 
                  col_types = cols(
                    `Ease of doing business rank (1=most business-friendly regulations) [IC.BUS.EASE.XQ]` = col_double(),
                    `Tax revenue (% of GDP) [GC.TAX.TOTL.GD.ZS]` = col_double(),
@@ -27,7 +28,9 @@ names(data) <- sub(" \\[.*", "", names(data))
 data %>%
   ggplot(aes(`Tax revenue (% of GDP)`, `GDP per capita (current US$)`)) +
   geom_point() +
-  geom_smooth(method = "lm")
+  geom_smooth(method = "lm") +
+  theme_bw() + theme(panel.grid=element_blank())+
+  ggtitle("Scatter Plot Taxe Revenue (% of GDP) Vs GDP Per capita ")
 
 #2.
 data %>%

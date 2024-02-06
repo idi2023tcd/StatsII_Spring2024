@@ -1,0 +1,83 @@
+Time,Time Code,Country Name,Country Code,Ease of doing business rank (1=most business-friendly regulations) [IC.BUS.EASE.XQ],GDP (current US$) [NY.GDP.MKTP.CD],Tax revenue (% of GDP) [GC.TAX.TOTL.GD.ZS]
+2019,YR2019,Albania,ALB,82,15401826127.2539,18.1443771903866
+2019,YR2019,Andorra,AND,..,3155150255.91195,..
+2019,YR2019,Armenia,ARM,47,13619290539.2116,22.2851709900772
+2019,YR2019,Austria,AUT,27,444596155845.254,25.5828349182075
+2019,YR2019,Azerbaijan,AZE,28,48174235294.1176,14.2188526451777
+2019,YR2019,Belarus,BLR,49,64410122847.3508,13.3015160119125
+2019,YR2019,Belgium,BEL,46,535865804349.803,22.6341104905571
+2019,YR2019,Bosnia and Herzegovina,BIH,90,20482608755.379,19.8265971899192
+2019,YR2019,Bulgaria,BGR,61,68881010245.5498,20.4828150913513
+2019,YR2019,Channel Islands,CHI,..,10381669645.1366,..
+2019,YR2019,Croatia,HRV,51,61470295887.8384,21.0750360737608
+2019,YR2019,Cyprus,CYP,54,25947027570.4262,23.2993930370698
+2019,YR2019,Czechia,CZE,41,252548179964.897,14.7687696689181
+2019,YR2019,Denmark,DNK,4,346498737961.635,34.8340429595631
+2019,YR2019,Estonia,EST,18,31081901909.2156,21.2929535588773
+2019,YR2019,Faroe Islands,FRO,..,3266432734.22819,..
+2019,YR2019,Finland,FIN,20,268514916972.549,20.6684788499862
+2019,YR2019,France,FRA,33,2728870246705.88,24.5146627776513
+2019,YR2019,Georgia,GEO,7,17470436258.5131,23.1173329727924
+2019,YR2019,Germany,DEU,22,3889177589254.9,11.4057701109061
+2019,YR2019,Gibraltar,GIB,..,..,..
+2019,YR2019,Greece,GRC,79,205252760889.364,26.1803523188966
+2019,YR2019,Greenland,GRL,..,2997309971.87623,..
+2019,YR2019,Hungary,HUN,52,164020460331.659,22.3640562554323
+2019,YR2019,Iceland,ISL,26,24681343649.2952,21.9320134156456
+2019,YR2019,Ireland,IRL,24,398933010007.356,17.7130081990219
+2019,YR2019,Isle of Man,IMN,..,7314966839.12782,..
+2019,YR2019,Italy,ITA,58,2011302198827.45,24.5767049036025
+2019,YR2019,Kazakhstan,KAZ,25,181667184854.501,11.78694274063
+2019,YR2019,Kosovo,XKX,57,7899737577.47286,..
+2019,YR2019,Kyrgyz Republic,KGZ,80,9371275264.36735,15.9638338680814
+2019,YR2019,Latvia,LVA,19,34225547537.0745,21.3392266442121
+2019,YR2019,Liechtenstein,LIE,..,6436467007.11932,..
+2019,YR2019,Lithuania,LTU,11,54808531641.4117,19.9659267029908
+2019,YR2019,Luxembourg,LUX,72,69890505323.5842,26.4537121940422
+2019,YR2019,Moldova,MDA,48,11735774634.4239,17.656290127877
+2019,YR2019,Monaco,MCO,..,7383944044.17,..
+2019,YR2019,Montenegro,MNE,50,5542054181.12616,..
+2019,YR2019,Netherlands,NLD,42,910194347568.626,24.0454827779179
+2019,YR2019,North Macedonia,MKD,17,12606338448.547,17.0832810795126
+2019,YR2019,Norway,NOR,9,408742840909.091,23.2830044006887
+2019,YR2019,Poland,POL,40,596058473058.766,17.3364818404434
+2019,YR2019,Portugal,PRT,39,239986922638.902,22.2011920067777
+2019,YR2019,Romania,ROU,55,251017797625.017,14.560555204924
+2019,YR2019,Russian Federation,RUS,29,1693115002708.32,10.938399737976
+2019,YR2019,San Marino,SMR,92,1616188702.33964,16.9127343335794
+2019,YR2019,Serbia,SRB,44,51514242938.6734,24.0497349284773
+2019,YR2019,Slovak Republic,SVK,45,105711680180.565,18.78383560839
+2019,YR2019,Slovenia,SVN,37,54386654313.9685,18.3159416451755
+2019,YR2019,Spain,ESP,31,1394320055129.41,13.7486320897494
+2019,YR2019,Sweden,SWE,10,533879529188.454,27.4127018295836
+2019,YR2019,Switzerland,CHE,36,721369112726.724,9.90716918660662
+2019,YR2019,Tajikistan,TJK,106,8300813889.60795,..
+2019,YR2019,Turkiye,TUR,34,761005946788.221,16.524385163859
+2019,YR2019,Turkmenistan,TKM,..,45232857142.8571,..
+2019,YR2019,Ukraine,UKR,64,153883047509.577,19.1961400966208
+2019,YR2019,United Kingdom,GBR,8,2851407164907.81,25.0889355532268
+2019,YR2019,Uzbekistan,UZB,69,60283503705.3907,12.616227036276
+,,,,,,
+,,,,,,
+,,,,,,
+Data from database: World Development Indicators,,,,,,
+Last Updated: 12/18/2023,,,,,,
+Code,License Type,Indicator Name,Long definition,Source,Topic,Periodicity,Aggregation method,Statistical concept and methodology,Development relevance,Limitations and exceptions,General comments,License URL
+IC.BUS.EASE.XQ,CC BY-4.0,Ease of doing business rank (1=most business-friendly regulations),"Ease of doing business ranks economies from 1 to 190, with first place being the best. The ranking of economies is determined by sorting the aggregate ease of doing business scores. A high ranking (a low numerical rank) means that the regulatory environment is conducive to business operation.","World Bank, Doing Business project (http://www.doingbusiness.org/). NOTE: Doing Business has been discontinued as of 9/16/2021. For more information: https://bit.ly/3CLCbme",Private Sector & Trade: Business environment,Annual,,"The ranking of economies is determined by sorting the aggregate ease of doing business scores. The aggregate ease of doing business score for each economy is the simple average of their scores on each of the 10 topics included in the ranking: starting a business, dealing with construction permits, getting electricity, registering property, getting credit, protecting minority investors, paying taxes, trading across borders, enforcing contracts and resolving insolvency. All topics are weighted equally. 
+
+Data are collected by the World Bank with a standardized survey that uses a simple business case to ensure comparability across economies and over time - with assumptions about the legal form of the business, its size, its location, and nature of its operation. Surveys are administered through more than 9,000 local experts, including lawyers, business consultants, accountants, freight forwarders, government officials, and other professionals who routinely administer or advise on legal and regulatory requirements.
+
+The Doing Business project of the World Bank encompasses two types of data: data from readings of laws and regulations and data on time and motion indicators that measure efficiency in achieving a regulatory goal. Within the time and motion indicators cost estimates are recorded from official fee schedules where applicable. The data from surveys are subjected to numerous tests for robustness, which lead to revision or expansion of the information collected. Please also refer to the Doing Business website for additional information: https://www.doingbusiness.org/en/methodology","The economic health of a country is measured not only in macroeconomic terms but also by other factors that shape daily economic activity such as laws, regulations, and institutional arrangements. The fundamental premise of this data is that economic activity requires good rules and regulations that are efficient, accessible to all who need to use them, and simple to implement. 
+The Doing Business project provides objective measures of business regulations and their enforcement across 190 economies and selected cities at the subnational and regional level.
+The Doing Business project, launched in 2002, looks at domestic small and medium-size companies and measures the regulations applying to them through their life cycle.
+By gathering and analyzing comprehensive quantitative data to compare business regulation environments across economies and over time, Doing Business encourages economies to compete towards more efficient regulation; offers measurable benchmarks for reform; and serves as a resource for academics, journalists, private sector researchers and others interested in the business climate of each economy.","The Doing Business methodology has limitations that should be considered when interpreting the data. First, the data collected refer to businesses in the economy's largest city and may not represent regulations in other locations of the economy. To address this limitation, subnational indicators are being collected for selected economies. These subnational studies point to significant differences in the speed of reform and the ease of doing business across cities in the same economy. Second, the data often focus on a specific business form - generally a limited liability company of a specified size - and may not represent regulation for other types of businesses such as sole proprietorships. Third, transactions described in a standardized business case refer to a specific set of issues and may not represent the full set of issues a business encounters. Fourth, the time measures involve an element of judgment by the expert respondents. When sources indicate different estimates, the Doing Business time indicators represent the median values of several responses given under the assumptions of the standardized case. Fifth, the methodology assumes that a business has full information on what is required and does not waste time when completing procedures. Please also see: https://www.doingbusiness.org/en/about-us/faq",Data are presented for the survey year instead of publication year. The country ranking is only available for the latest year.,https://datacatalog.worldbank.org/public-licenses#cc-by
+NY.GDP.MKTP.CD,CC BY-4.0,GDP (current US$),"GDP at purchaser's prices is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. Data are in current U.S. dollars. Dollar figures for GDP are converted from domestic currencies using single year official exchange rates. For a few countries where the official exchange rate does not reflect the rate effectively applied to actual foreign exchange transactions, an alternative conversion factor is used.","World Bank national accounts data, and OECD National Accounts data files.",Economic Policy & Debt: National accounts: US$ at current prices: Aggregate indicators,Annual,Gap-filled total,"Gross domestic product (GDP) represents the sum of value added by all its producers. Value added is the value of the gross output of producers less the value of intermediate goods and services consumed in production, before accounting for consumption of fixed capital in production. The United Nations System of National Accounts calls for value added to be valued at either basic prices (excluding net taxes on products) or producer prices (including net taxes on products paid by producers but excluding sales or value added taxes). Both valuations exclude transport charges that are invoiced separately by producers. Total GDP is measured at purchaser prices. Value added by industry is normally measured at basic prices.",,"Gross domestic product (GDP), though widely tracked, may not always be the most relevant summary of aggregated economic performance for all economies, especially when production occurs at the expense of consuming capital stock.
+
+While GDP estimates based on the production approach are generally more reliable than estimates compiled from the income or expenditure side, different countries use different definitions, methods, and reporting standards. World Bank staff review the quality of national accounts data and sometimes make adjustments to improve consistency with international guidelines. Nevertheless, significant discrepancies remain between international standards and actual practice. Many statistical offices, especially those in developing countries, face severe limitations in the resources, time, training, and budgets required to produce reliable and comprehensive series of national accounts statistics.
+
+Among the difficulties faced by compilers of national accounts is the extent of unreported economic activity in the informal or secondary economy. In developing countries a large share of agricultural output is either not exchanged (because it is consumed within the household) or not exchanged for money.",,https://datacatalog.worldbank.org/public-licenses#cc-by
+GC.TAX.TOTL.GD.ZS,CC BY-4.0,Tax revenue (% of GDP),"Tax revenue refers to compulsory transfers to the central government for public purposes. Certain compulsory transfers such as fines, penalties, and most social security contributions are excluded. Refunds and corrections of erroneously collected tax revenue are treated as negative revenue.","International Monetary Fund, Government Finance Statistics Yearbook and data files, and World Bank and OECD GDP estimates.",Public Sector: Government finance: Revenue,Annual,Weighted average,"The IMF's Government Finance Statistics Manual 2014, harmonized with the 2008 SNA, recommends an accrual accounting method, focusing on all economic events affecting assets, liabilities, revenues, and expenses, not just those represented by cash transactions. It accounts for all changes in stocks, so stock data at the end of an accounting period equal stock data at the beginning of the period plus flows over the period. The 1986 manual considered only debt stocks.
+
+Government finance statistics are reported in local currency. Many countries report government finance data by fiscal year; see country metadata for information on fiscal year end by country.",,"For most countries central government finance data have been consolidated into one account, but for others only budgetary central government accounts are available. Countries reporting budgetary data are noted in the country metadata. Because budgetary accounts may not include all central government units (such as social security funds), they usually provide an incomplete picture. In federal states the central government accounts provide an incomplete view of total public finance.
+
+Data on government revenue and expense are collected by the IMF through questionnaires to member countries and by the Organisation for Economic Co-operation and Development (OECD). Despite IMF efforts to standardize data collection, statistics are often incomplete, untimely, and not comparable across countries.",,https://datacatalog.worldbank.org/public-licenses#cc-by

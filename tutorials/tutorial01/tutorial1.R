@@ -53,8 +53,10 @@ library(stargazer)
 # open the data file we just imported using "import dataset...". In the window that 
 # opens, you'll notice we can manually change the type of data for each column...
 
-data <- 
 
+data <-read.csv("C:/NewGithubFolder/StatsII_Spring2024/tutorials/tutorial01/tutorial1_data.csv") 
+View(data)
+names(data)
 #### Wrangling the data
 # We should now have a dataset where our variables are at least of the correct type.
 # However, we need to do a bit of tidying to get the data into a more user-friendly
@@ -74,7 +76,7 @@ names(data) <- #hint: try using the function sub() with the regexp " \\[.*"
 #### Analysing the data
 # Now that we have a dataset in the desired format, we can proceed to the analysis.
 
-# 1. Let's perform some preliminary descriptive analysis using our visualisation skills.
+# 1. Let's perform some preliminary descriptive analysis using our visualization skills.
 #    Try using ggplot to create a plot of scatter showing GDP p/c vs Tax revenue. Add a
 #    simple linear regression line.
   
@@ -89,7 +91,7 @@ names(data) <- #hint: try using the function sub() with the regexp " \\[.*"
 # 5. Now let's run a regression!
 
 formula <- `GDP per capita (current US$)` ~ `Tax revenue (% of GDP)` + `Ease of doing business rank (1=most business-friendly regulations)`
-
+summary(formula)
 # How do we interpret these results?
 
 #### Communicating
@@ -127,3 +129,6 @@ data %>%
 stargazer(reg, type = "latex")
 
 # Now all we need is to update the latex template and upload the pdf to github!
+####################################
+#####
+
