@@ -293,7 +293,7 @@ round(prop.table(table(Affairs$affairs)), digits=2)*100 # Values in percentage
 #year (451/601=0.75=75%). The largest number of encounters reported was [ 12 or (6%), look at the summary table for affairs].
 ####
 #The number of the indiscretions was recorded, your interest here is in the binary 
-#outcome(had and affair/didn't have an affairs).
+#outcome(had an affair/didn't have an affairs).
 ##
 #You can transform affairs into a dichotomous factor called ynaffairs with the following code
 ####
@@ -303,7 +303,9 @@ table(Affairs$ynaffairs)
 ### Answer:
 #   No      Yes 
 #   451     150 
-###############
+##############################
+head(Affairs)
+###
 # This dichotomous factor can now be used as the outcome variable in a logistic regression model:
 ##
 fit.full <- glm(ynaffairs ~ gender + age + yearsmarried + children + religiousness + education + occupation + rating, 
@@ -343,6 +345,8 @@ summary(fit.full)
 # parameters are 0).
 #Let's fit a 2nd equation without them and test whether this reduced model fits the data as well:
 ##
+## 1st. Method: fit.reduced
+
 fit.reduced <- glm(ynaffairs ~ age + yearsmarried + religiousness + rating, family = binomial(link = "logit"),
                    data = Affairs)
 summary(fit.reduced)
@@ -369,6 +373,12 @@ summary(fit.reduced)
 #AIC: 625.36
 #
 #Number of Fisher Scoring iterations: 4
+###
+####
+# 2nd Method for fit.reduced - This method will reduced the full.fit by choosing only those variables that have significant p-vales.
+fit.reduced_2 <- step(fit.full)
+summary(fit.reduced_2 )
+
 ###
 #Each regression coefficient in the reduced model is statistically significant(p<0.05)
               
@@ -506,6 +516,30 @@ summary(fit_myFull_logit_supporting_policy)
 #Number of Fisher Scoring iterations: 4
 ################################################################################################
 ########################################################################################################
+# First method: Plot diagnostics to check for model adequacy:
+##
+plot(predict(fit_myFull_logit_supporting_policy, type="response"),
+     residuals(fit_myFull_logit_supporting_policy, type="deviance"))
+
+##############
+######## Second method: Plot diagnostics to check for model adequacy:
+###
+plot(hatvalues(fit_myFull_logit_supporting_policy))
+plot(rstudent(fit_myFull_logit_supporting_policy))
+plot(cooks.distance(fit_myFull_logit_supporting_policy))
+#######################
+## Third method: Plot diagnostics to check for model adequacy:
+install.packages("car")
+library("car")
+##
+influencePlot(fit_myFull_logit_supporting_policy) # This is my preferable method:
+## Answer:
+#       StudRes          Hat           CookD
+#193 -1.288055     0.0007387185    0.0001592043
+#201  1.071259     0.0007387185    0.0000954958
+#265  1.430250     0.0006782996    0.0002014243
+#737  1.430250    0.0006782996     0.0002014243
+
 #2nd Method: for plotting an interactive graph
 ###
 # Load the necessary libraries
@@ -646,3 +680,742 @@ probability <- countries_value * sanctions_value
 
 # Output the result
 probability # Answer:  0.2571311
+##################################################################################################
+###############################################################################################################
+### MY EXAMPLE: WHY WHEN I USE THE FOLLOWING FORMULA:
+#Could you please tell why I run the code in RStudio using the formula:  my_fit_lm <- lm( y ~ x1 + x2 + x3, data=my_data) , 
+#summary(my_fit_lm) and
+#my_fit_glm <- glm( y ~ x1 + x2 + x3, family=gaussian(link="identity"), data=my_fit_glm), summary(my_fit_glm)). 
+#Both showing the same output after running the R code in the RStudio. Please tell why this happening? Provide a concrete 
+#example.
+####
+# Generate some example data
+set.seed(123)
+x1 <- rnorm(100)
+x2 <- rnorm(100)
+x3 <- rnorm(100)
+y <- 2*x1 + 3*x2 - 1.5*x3 + rnorm(100)
+
+# Create a data frame
+my_data <- data.frame(y = y, x1 = x1, x2 = x2, x3 = x3)
+head(my_data)
+## Answer:
+#         y          x1          x2         x3
+#1 -7.265629 -0.56047565 -0.71040656  2.1988103
+#2 -2.411012 -0.23017749  0.25688371  1.3124130
+#3  1.836520  1.55870831 -0.24669188 -0.2651451
+#4 -2.768915  0.07050839 -0.34754260  0.5431941
+#5 -2.411930  0.12928774 -0.95161857 -0.4143399
+#6  4.340596  1.71506499 -0.04502772 -0.4762469
+######
+#
+# Fit linear regression models using lm() and glm()
+my_fit_lm <- lm(y ~ x1 + x2 + x3, data = my_data)
+my_fit_glm <- glm(y ~ x1 + x2 + x3, family = gaussian(link = "identity"), data = my_data)
+
+# Display summaries
+summary(my_fit_lm)
+### Answer:
+#Call:
+#lm(formula = y ~ x1 + x2 + x3, data = my_data)
+
+#Residuals:
+#  Min       1Q   Median       3Q      Max 
+#-2.49138 -0.65392  0.05664  0.67033  2.53210 
+#
+#Coefficients:
+#              Estimate  Std. Error    t value    Pr(>|t|)    
+#(Intercept) -0.01933    0.10734       -0.18      0.858    
+#x1           1.94455    0.11688       16.64     <2e-16 ***
+#  x2           3.04622    0.10946     27.83     <2e-16 ***
+#  x3          -1.55739    0.11223     -13.88    <2e-16 ***
+#  ---
+#  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+#
+#Residual standard error: 1.052 on 96 degrees of freedom
+#Multiple R-squared:  0.9284,	Adjusted R-squared:  0.9262 
+#F-statistic: 415.2 on 3 and 96 DF,  p-value: < 2.2e-16
+###
+summary(my_fit_glm)
+# Answer:
+#Call:
+#glm(formula = y ~ x1 + x2 + x3, family = gaussian(link = "identity"), 
+#    data = my_data)
+
+#Coefficients:
+#              Estimate  Std. Error   t value     Pr(>|t|)    
+#(Intercept) -0.01933    0.10734      -0.18       0.858    
+#x1           1.94455    0.11688      16.64      <2e-16 ***
+#  x2           3.04622    0.10946    27.83      <2e-16 ***
+#  x3          -1.55739    0.11223    -13.88     <2e-16 ***
+#  ---
+#  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+#(Dispersion parameter for gaussian family taken to be 1.105679)
+#
+#Null deviance: 1483.22  on 99  degrees of freedom
+#Residual deviance:  106.15  on 96  degrees of freedom
+#AIC: 299.75
+#
+#Number of Fisher Scoring iterations: 2
+########################################################################################################################
+##################################################################################################################
+### LECTURE - WEEK 8 : MULTINOMINAL LOGISTIC REGRESSION ### 
+###
+install.packages("nnet")
+library("nnet")
+####
+diocese_data=read.csv("C:/NewGithubFolder/StatsII_Spring2024/datasets/diocese_data.csv", stringsAsFactors=F)
+diocese_data
+dim(diocese_data) # rows/observations=2808; columns/variables=50
+names(diocese_data)
+###
+# Run the base MULTINOMINAL logit
+multinom_model1 <- multinom(state3 ~ cathpct_lag + hogCatholic_lag + propenpt_lag + country, data=diocese_data)
+summary(multinom_model1)
+#######################################################################################################################
+###
+######
+## My Revision on Time Series
+install.packages(c("xts", "forecast", "tseries", "directlabels"))
+library("xts") 
+library("forecast") 
+library("tseries")
+library("directlabels")
+######
+# Page 358 # 15.1 Creating a time-series object in R 
+###
+## Time-Series Objects in R
+##
+install.packages(c("tsibble", "timeSeries", "irts", "tis"))
+library("tsibble")
+library("timeSeries")
+library("irts")
+library("tis")
+##############################
+## Create a time series and plot it
+
+profit <-c(2300, 7500, 3250, 1500, 980, 323, 890, 2890, 7890, 5330,9000,4500,6201, 1500, 4321, 5675, 1998, 1456,8965,2789,6789,
+           6422,8970, 3489)
+length(profit)
+date<-seq(from=as.Date("2020/3/1"), to=as.Date("2022/2/1"), by="month")
+length(date)
+##
+my_data.xts<-xts(profit,date)
+class(my_data.xts)
+#####
+# 1st method: Default plotting using autoplot() function
+autoplot(my_data.xts)
+################################################################################################################################
+############################################################################################################################
+### PROBLEM SET III/ APPLIED STATISTICAL ANALYSIS II
+##
+# PROBLEM SET 3
+#APPLIED STATISTICAL ANALYSIS II
+#STUDENT FULL NAME: IDI AMIN DA SILVA
+# STUDENT NUMBER: 23372225
+
+#####################
+# load libraries
+# set wd
+# clear global .envir
+#####################
+
+# remove objects
+rm(list=ls())
+# detach all libraries
+detachAllPackages <- function() {
+  basic.packages <- c("package:stats", "package:graphics", "package:grDevices", "package:utils", "package:datasets", "package:methods", "package:base")
+  package.list <- search()[ifelse(unlist(gregexpr("package:", search()))==1, TRUE, FALSE)]
+  package.list <- setdiff(package.list, basic.packages)
+  if (length(package.list)>0)  for (package in package.list) detach(package,  character.only=TRUE)
+}
+detachAllPackages()
+
+# load libraries
+pkgTest <- function(pkg){
+  new.pkg <- pkg[!(pkg %in% installed.packages()[,  "Package"])]
+  if (length(new.pkg)) 
+    install.packages(new.pkg,  dependencies = TRUE)
+  sapply(pkg,  require,  character.only = TRUE)
+}
+
+# here is where you load any necessary packages
+#
+install.packages(c("nnet", "MASS", "mlogit"))
+install.packages(c("dfidx", "Rtools"))
+library("dfidx")
+library("Rtools")
+library("nnet")
+library("MASS")
+library("mlogit") # mlogit package is used to perform Multinomial Logistic Regression Model 
+######################
+# ex: stringr
+# lapply(c("stringr"),  pkgTest)
+
+lapply(c("nnet", "MASS", "mlogit"),  pkgTest)
+
+# set wd for current folder
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+#####################
+# Problem 1
+#####################
+### Answer of Problem 1/Question 1
+# load data
+##
+gdp_data <- read.csv("C:/NewGithubFolder/StatsII_Spring2024/datasets/gdpChange.csv", stringsAsFactors = F)# To Load dataset into R
+head(gdp_data) # This line of the code provide the first 6 observations in the dataset
+dim(gdp_data) # Rows/Observations=3721; Columns/Variables=12
+names(gdp_data)# "X" ;"COUNTRY"; "CTYNAME"; "YEAR"; "GDPW"; "OIL"; "REG" ;"EDT";"GDPWlag";"GDPWdiff";"GDPWdifflag" ;"GDPWdifflag2" 
+str(gdp_data) # # Check the structure of the dataset
+#####################
+##
+# Create a new column with categorical variable based on continuous/numerical variable GDPWdiff
+gdp_data$GDPWdiff_category <- ifelse(gdp_data$GDPWdiff < 0, "negative",
+                                     ifelse(gdp_data$GDPWdiff == 0, "no change", "positive"))
+head(gdp_data) # # View the first few rows to verify the transformation
+#
+table(gdp_data$GDPWdiff_category)
+#Answer:
+#  negative  no change   positive 
+#   1105        16        2600
+##
+###
+## Transform the REG (Regime) from binary (0;1) into the Categorical 0=Non-Democracy; 1=Democracy
+gdp_data$REG <- factor(gdp_data$REG, levels=c(0, 1), labels=c("Non-Democracy", "Democracy"))
+table(gdp_data$REG)
+#### Answer/Output
+#Non-Democracy     Democracy 
+#   2227             1494 
+########
+#Transform the variable OIL from binary to Categorical Variable:
+gdp_data$OIL <- factor(gdp_data$OIL, levels=c(0, 1), labels=c("Not Exceed 50%","otherwise"))
+table(gdp_data$OIL)
+######
+#Not Exceed 50%    Otherwise 
+#     3374            347
+#####
+ftable(xtabs(~REG + GDPWdiff_category + OIL, data=gdp_data))
+# Answer:
+#                           OIL Not Exceed 50%  otherwise
+#REG           GDPWdiff_category                             
+#Non-Democracy negative            641           93
+#              no change           14            0
+#              positive           1284          195
+
+#Democracy     negative           332            39
+#no change                         2             0
+#positive                         1074           47
+######
+gdp_data$GDPWdiff_category <- factor(gdp_data$GDPWdiff_category, levels=c("negative","no change","positive"), 
+                                     labels=c("negative","no change","positive"))
+####################
+#################################
+#PROBLEM SET III. Question 1: Part 1.
+# Fitting an unordered multinomial logit with as the output and setting a reference category "no change".
+##
+gdp_data$GDPWdiff_category <- relevel(gdp_data$GDPWdiff_category , ref="no change")
+# Run the Model:
+multinom_model_unordered <- multinom(GDPWdiff_category ~ REG + OIL, data = gdp_data)
+summary(multinom_model_unordered) # # Summary of the model
+##
+## Answer/Output
+#Call:
+#  multinom(formula = GDPWdiff_category ~ REG + OIL, data = gdp_data)
+
+#Coefficients:
+#           (Intercept) REGDemocracy OILotherwise
+#negative    3.805370     1.379282     4.783968
+#positive    4.533759     1.769007     4.576321
+
+#Std. Errors:
+#           (Intercept) REGDemocracy OILotherwise
+#negative   0.2706832    0.7686958     6.885366
+#positive   0.2692006    0.7670366     6.885097
+
+#Residual Deviance: 4678.77 
+#AIC: 4690.77 
+################################################################
+#
+exp(coef(multinom_model_unordered)) # Convert the coefficients to odds ratio 
+# Answer/Output:
+#             (Intercept) REGDemocracy OILotherwise
+#negative    44.94186     3.972047    119.57794
+#positive    93.10789     5.865024     97.15632
+#####
+# Calculate the p-values:
+z <- summary(multinom_model_unordered)$coefficients/summary(multinom_model_unordered)$standard.errors
+(p <- (1 - pnorm(abs(z), 0, 1))*2)
+## Answer:
+#               (Intercept) REGDemocracy OILotherwise
+#negative           0       0.07276308    0.4871792
+#positive           0       0.02109459    0.5062612
+############
+#I can use predicted probabilities to help me interpret my output/variables estimated
+pp <- data.frame(fitted(multinom_model_unordered))
+head(data.frame(GDPWdiff_category=gdp_data$GDPWdiff_category, 
+                negative=pp$negative,
+                nochange=pp$no.change,
+                positive=pp$positive))
+
+## Answer/Output
+##
+#GDPWdiff_category  negative     nochange  positive
+#          positive 0.3726529 6.934296e-05 0.6272778
+#          negative 0.3726529 6.934296e-05 0.6272778
+#          positive 0.3726529 6.934296e-05 0.6272778
+#          positive 0.3726529 6.934296e-05 0.6272778
+#          positive 0.3726529 6.934296e-05 0.6272778
+#          positive 0.3726529 6.934296e-05 0.6272778
+####################################################################################
+#PROBLEM SET III. Question 1: Part 2.
+#Construct and interpret an ordered multinomial logit with GDPWdiff as the outcome variable, including the estimated cutoff points
+# and coefficients.
+###########################################################
+# Convert GDPWdiff to a factor with ordered levels
+#gdp_data$GDPWdiff_category <- factor(gdp_data$GDPWdiff_category, levels = c("negative", "no change", "positive"), 
+#                                     ordered = TRUE)
+#
+# Fit the ordered multinomial logistic regression model:
+
+multinom_model_ordered <- polr(GDPWdiff_category ~ REG + OIL, data = gdp_data, Hess = TRUE)
+summary(multinom_model_ordered) # # Summary of the model
+### Answer/Output
+#
+#Call:
+#  polr(formula = GDPWdiff_category ~ REG + OIL, data = gdp_data, 
+#       Hess = TRUE)
+#
+#Coefficients:
+#                     Value   Std. Error  t value
+#REGDemocracy       0.3985    0.07518    5.300
+#OILNot Exceed 50%  0.1987    0.11572    1.717
+#
+#Intercepts:
+#                     Value   Std. Error    t value
+#negative|no change -0.5325   0.1097        -4.8544
+#no change|positive -0.5118    0.1097       -4.6671
+#
+#Residual Deviance: 4687.689 
+#AIC: 4695.689
+#######################
+## Calculating the p-value
+ctable1 <- coef(summary(multinom_model_ordered)) # Extract coefficient summary
+p <- 2 * (1 - pnorm(abs(ctable1[, "t value"]))) # Calculate the p-value
+ctable1 <- cbind(ctable1, "p-value" = p) ## Combine coefficient summary and p-values
+print(ctable1) # Print the results 
+## Answer:
+#                     Value      Std. Error   t value      p-value
+#REGDemocracy        0.3984828  0.07518478    5.300046   1.157735e-07
+#OILNot Exceed 50%   0.1987196  0.11571711    1.717288   8.592653e-02
+#negative|no change -0.5324600  0.10968546   -4.854426   1.207358e-06
+#no change|positive -0.5117652  0.10965270   -4.667147   3.054110e-06
+#####
+# Calculating  95% confidence intervals:
+(ci <- confint(multinom_model_ordered))
+## Answer:
+#                          2.5 %       97.5 %
+#REGDemocracy           0.25165482    0.5464341
+#OILNot Exceed 50%      -0.03019571   0.4237548
+####
+# Converting to odds ratio:
+exp(cbind(OR=coef(multinom_model_ordered), ci))
+## Answer:
+#                        OR        2.5 %       97.5 %
+#REGDemocracy         1.489563    1.2861520   1.727083
+#OILNot Exceed 50%    1.219840    0.9702556   1.527687
+#################################################################################################################################
+#########################################
+########################################################################################################################
+
+################################################################################################################################
+# PROBLEM SET III. QUESTION 2. Method: Using Jeffrey Student Slides
+##################### Answer of Problem Set III;  Question 2
+###########################################################
+
+# load data
+#mexico_elections <- read.csv("https://raw.githubusercontent.com/ASDS-TCD/StatsII_Spring2024/main/datasets/MexicoMuniData.csv")
+###
+mexico_elections <- read.csv("C:/NewGithubFolder/StatsII_Spring2024/datasets/MexicoMuniData.csv")
+#
+head(mexico_elections)
+names(mexico_elections)#"MunicipCode" ; "pan.vote.09"; "marginality.06"; "PAN.governor.06"; "PAN.visits.06"; "competitive.district"
+dim(mexico_elections) # Rows/Observations=2407; Columns/Variables=6
+str(mexico_elections)
+##
+# Outcome variable: "PAN.visits.06"
+###
+# Predictors Variables of the interest:
+# "competitive.district: 1=close/swing district; 0="safe seat") " 
+#PAN.governor.06"
+#"marginality.06"
+#"PAN.governor.06"
+####
+table(mexico_elections$PAN.visits.06)
+# Answer:
+#
+#   0    1     2    3    4    5   35 
+# 2272  102   17   12    1    2    1 
+###############
+table(mexico_elections$"marginality.06")
+# (a) Answers:
+poisson_reg.model <- glm(PAN.visits.06 ~ competitive.district + marginality.06 + 
+                           PAN.governor.06 , data=mexico_elections, family=poisson)
+summary(poisson_reg.model)
+# Answer:
+#Call:
+#glm(formula = PAN.visits.06 ~ competitive.district + marginality.06 + 
+#      PAN.governor.06, family = poisson, data = mexico_elections)
+#
+#Coefficients:
+#  Estimate Std. Error z value Pr(>|z|)    
+#(Intercept)          -3.81023    0.22209 -17.156   <2e-16 ***
+#  competitive.district -0.08135    0.17069  -0.477   0.6336    
+#marginality.06       -2.08014    0.11734 -17.728   <2e-16 ***
+#  PAN.governor.06      -0.31158    0.16673  -1.869   0.0617 .  
+#---
+#  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+#
+#(Dispersion parameter for poisson family taken to be 1)
+
+#Null deviance: 1473.87  on 2406  degrees of freedom
+#Residual deviance:  991.25  on 2403  degrees of freedom
+#AIC: 1299.2
+
+#Number of Fisher Scoring iterations: 7
+###
+### SLIDE 20 # Over-dispersion test in R
+# Check equal variance assumption
+##
+install.packages("AER")
+library("AER")
+#
+dispersiontest(poisson_reg.model)
+## Answer:
+#Overdispersion test
+
+#data:  poisson_reg.model
+#z = 1.0668, p-value = 0.143
+#alternative hypothesis: true dispersion is greater than 1
+#sample estimates:
+#  dispersion 
+#2.09834 
+########
+#Slide 22  Zip Model in R
+# R contributed package "pscl" contains the function zeroinfl:
+install.packages("pscl")
+library("pscl")
+###
+zeroinfl_poisson_1 <- zeroinfl(PAN.visits.06 ~ competitive.district + marginality.06 +
+                                 PAN.governor.06 , data=mexico_elections, dist="poisson")
+summary(zeroinfl_poisson_1)
+## Answer:
+#Call:
+zeroinfl(formula = PAN.visits.06 ~ competitive.district + marginality.06 + PAN.governor.06, data = mexico_elections, 
+         dist = "poisson")
+
+#Pearson residuals:
+#  Min       1Q   Median       3Q      Max
+#-0.95323 -0.24006 -0.12842 -0.06045 37.56115
+
+#Count model coefficients (poisson with log link):
+#  Estimate Std. Error z value Pr(>|z|)
+#(Intercept)           -1.9145     0.4982  -3.843 0.000122 ***
+#  competitive.district   0.4024     0.3119   1.290 0.197028
+#marginality.06        -1.2398     0.2610  -4.750 2.03e-06 ***
+#  PAN.governor.06       -0.4703     0.2707  -1.737 0.082341 .
+
+#Zero-inflation model coefficients (binomial with logit link):
+#  Estimate Std. Error z value Pr(>|z|)
+#(Intercept)            1.2719     0.6753   1.883  0.05966 .
+#competitive.district   0.9000     0.5106   1.763  0.07794 .
+#marginality.06         0.8716     0.3021   2.885  0.00392 **
+#   PAN.governor.06       -0.1749     0.4119  -0.425  0.67106
+# ---
+#   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+#
+# Number of iterations in BFGS optimization: 28
+# Log-likelihood: -600.4 on 8 Df
+####
+#(b)
+exp(coef(poisson_reg.model))
+# Answer
+#(Intercept) competitive.district       marginality.06      PAN.governor.06 
+#0.02214298           0.92186932           0.12491227           0.73228985 
+#########
+#(c)
+# Coefficients from the Poisson regression model
+coefficients <- coef(poisson_reg.model)
+
+# Values for the hypothetical district
+competitive_district <- 1  # competitive.district = 1
+marginality <- 0           # marginality.06 = 0
+pan_governor <- 1          # PAN.governor.06 = 1
+
+# Calculating the linear predictor (eta) using the coefficients and values
+eta <- coefficients["(Intercept)"] +
+  coefficients["competitive.district"] * competitive_district +
+  coefficients["marginality.06"] * marginality +
+  coefficients["PAN.governor.06"] * pan_governor
+
+eta
+# Answer:
+#(Intercept) 
+#-4.203166
+#
+# Calculating the predicted mean using the Poisson link function
+predicted_mean <- exp(eta)
+predicted_mean # # Output the result
+#(Intercept) 
+#0.01494818 
+############################################################################################################################
+###########################################################################################################################
+#################################################################################################################################
+#PROBLEM SET III. Question 1: Part 1.
+##2nd Method: Using Jeffrey Student Slides
+###
+##
+gdp_data <- read.csv("C:/NewGithubFolder/StatsII_Spring2024/datasets/gdpChange.csv", stringsAsFactors = F)# To Load dataset into R
+head(gdp_data) # This line of the code provide the first 6 observations in the dataset
+dim(gdp_data) # Rows/Observations=3721; Columns/Variables=12
+names(gdp_data)# "X" ;"COUNTRY"; "CTYNAME"; "YEAR"; "GDPW"; "OIL"; "REG" ;"EDT";"GDPWlag";"GDPWdiff";"GDPWdifflag" ;"GDPWdifflag2" 
+str(gdp_data) # # Check the structure of the dataset
+#####################
+##
+# Create a new column with categorical variable based on continuous/numerical variable GDPWdiff
+gdp_data$GDPWdiff_category <- ifelse(gdp_data$GDPWdiff < 0, "negative",
+                                     ifelse(gdp_data$GDPWdiff == 0, "no change", "positive"))
+head(gdp_data) # # View the first few rows to verify the transformation
+#
+table(gdp_data$GDPWdiff_category)
+#Answer:
+#  negative  no change   positive 
+#   1105        16        2600
+###
+## Transform the REG (Regime) from binary (0;1) into the Categorical 0=Non-Democracy; 1=Democracy
+gdp_data$REG <- factor(gdp_data$REG, levels=c(0, 1), labels=c("Non-Democracy", "Democracy"))
+table(gdp_data$REG)
+#### Answer/Output
+#Non-Democracy     Democracy 
+#   2227             1494 
+########
+#Transform the variable OIL from binary to Categorical Variable:
+gdp_data$OIL <- ifelse(gdp_data$OIL ==1, "Exceed 50%", "Not Exceed 50%")
+table(gdp_data$OIL)
+######
+#Exceed 50%    Not Exceed 50% 
+# 374            3347
+#####
+ftable(xtabs(~REG + GDPWdiff_category + OIL, data=gdp_data))
+# Answer:
+#                                  OIL Exceed 50%  Not Exceed 50%
+#  REG         GDPWdiff_category                              
+#Non-Democracy 
+#              negative             93              641
+#              no change            0                14
+#              positive             195             1284
+
+#Democracy
+#             negative              39              332
+#             no change             0                2
+#             positive              47              1074
+####################
+#################################
+# Question 1: Part 1. Fitting a unordered multinomial logit with as the output and setting a reference category "no change"
+#
+# Run the base multinomial logit
+Multinom_Model1 <- multinom(GDPWdiff_category ~ REG + OIL, data = gdp_data)
+# weights:  12 (6 variable)
+#initial  value 4087.936326 
+#iter  10 value 2353.703961
+#iter  20 value 2339.597837
+#final  value 2339.365153 
+#converged
+####
+summary(Multinom_Model1)
+## Answer/Output
+#Call:
+#multinom(formula = GDPWdiff_category ~ REG + OIL, data = gdp_data)
+
+#Coefficients:
+#           (Intercept) REGDemocracy   OILNot Exceed 50%
+#no change -10.8788883   -1.3536726         7.0777686
+#positive    0.5208708    0.3898426         0.2074934
+
+#Std. Errors:
+#           (Intercept) REGDemocracy    OILNot Exceed 50%
+#no change  21.6001369   0.75883270        21.6016306
+#positive    0.1096375   0.07552351         0.1158108
+
+#Residual Deviance: 4678.73 
+#AIC: 4690.73 
+#####################################################################################################################
+#########################################################################################################################
+# Lecture WEEK 9: Count Data - Poisson Regression ##
+##
+# R code:
+elephant <- read.csv("C:/NewGithubFolder/StatsII_Spring2024/datasets/elephants.csv")
+head(elephant)
+names(elephant) # "Age"     "Matings"
+dim(elephant) # Rows/Observations=42; Columns/Variables=2
+str(elephant)
+####
+# Perform the scatterplot:
+ggplot(elephant, aes(x=Age, y=Matings))+
+  geom_point(size=2)+
+  geom_jitter()+
+  xlab("Elephant Age")+
+  ylab(("Elephant Matings"))+
+  theme_bw()+
+  theme(panel.grid=element_blank())+
+  ggtitle("Scatterplot Elephant Age Vs Elephant Mates")
+#####
+# Plot the Scatterplot with fitting linear regression line:
+##
+ggplot(elephant, aes(x=Age, y=Matings))+
+  geom_point(size=2)+
+  geom_jitter()+
+  geom_smooth(method="lm", formula=y~x, se=TRUE)+
+  xlab("Elephant Age")+
+  ylab(("Elephant Matings"))+
+  theme_bw()+
+  theme(panel.grid=element_blank())+
+  ggtitle("Scatterplot Elephant Age Vs Elephant Mates")
+######
+# Slide 10 # Zoology Example: Poisson/Count Regression Model
+##
+# 1st. Method:
+elephant_poisson <- glm( Matings ~ Age, data=elephant, family=poisson)
+summary(elephant_poisson )
+### Answer/Output
+#Call:
+#glm(formula = Matings ~ Age, family = poisson, data = elephant)
+
+#Coefficients:
+#              Estimate     Std. Error   z value    Pr(>|z|)    
+#(Intercept) -1.58201       0.54462       -2.905    0.00368 ** 
+#  Age          0.06869     0.01375       4.997     5.81e-07 ***
+#  ---
+#  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+#(Dispersion parameter for poisson family taken to be 1)
+#
+#Null deviance: 75.372  on 40  degrees of freedom
+#Residual deviance: 51.012  on 39  degrees of freedom
+#AIC: 156.46
+
+#Number of Fisher Scoring iterations: 5
+############
+# Predicted Equation: ln(lambda_i)= -1.58201 + 0.06869* X_1i
+###
+exp(coef(elephant_poisson))
+## Answer:
+# (Intercept)         Age 
+# 0.2055619       1.0711071 
+##############################################
+#To Calculate the log likelihood and  BIC :
+##
+# Calculate log-likelihood
+log_likelihood <- logLik(elephant_poisson) # Answer: 'log Lik.' -76.2289 (df=2)
+
+# Number of parameters (including intercept)
+num_parameters <- length(coef(elephant_poisson)) # Answer: 2
+
+# Calculate BIC
+bic <- -2 * log_likelihood + num_parameters * log(nrow(elephant))# Answer: 'log Lik.' 159.8849 (df=2)
+
+# Output BIC and log-likelihood
+cat("BIC:", bic, "\n")
+cat("Log-Likelihood:", log_likelihood, "\n")
+## Answer:
+#BIC: 159.8849 
+# Log-Likelihood: -76.2289 
+############
+# Slide 11 # Example : Poisson Regression Curve
+###
+# Get coefficients
+coeffs <- coefficients(elephant_poisson)
+
+# Sort x values
+xvalues <- sort(elephant$Age)
+
+# Calculate means
+means <- exp(coeffs[1] + coeffs[2]*xvalues)
+
+# Create scatterplot
+plot(elephant$Age, elephant$Matings, xlab = "Age", ylab = "Matings", main = "Scatterplot with Curve and Dots")
+
+# Add curve
+lines(xvalues, means, lty = 2, col = "red")
+##################
+#
+lambda30 <- exp(coeff[1] + coeff[2]*2) # Fix this code later
+lambda30
+####
+#Slide 17: Getting Fitted Values in R
+###
+predicted_values<- cbind(predict(elephant_poisson, data.frame(Age=seq(25, 55, 5)), type="response", se.fit=TRUE),
+                          data.frame(Age=seq(25, 55, 5)))
+##
+# Create lower and upper bounds for CIs
+predicted_values$lowerBound <- predicted_values$fit - 1.96*predicted_values$se.fit
+# Answer: 0.6627098 1.1196546 1.7844112 2.6025544 3.4061032 4.1438035 4.7681451
+#
+predicted_values$upperBound <- predicted_values$fit + 1.96*predicted_values$se.fit
+# Answer: 1.627079  2.108541  2.766773  3.813810  5.639833  8.609364 13.211562
+#
+### SLIDE 20 # Over-dispersion test in R
+# Check equal variance assumption
+##
+install.packages("AER")
+library("AER")
+#
+dispersiontest(elephant_poisson)
+# Answer:
+#Overdispersion test
+
+#data:  elephant_poisson
+#z = 0.49631, p-value = 0.3098
+#alternative hypothesis: true dispersion is greater than 1
+#sample estimates:
+#  dispersion 
+#1.107951 
+#####
+# Slide 22  Zip Model in R
+# R contributed package "pscl" contains the function zeroinfl:
+install.packages("pscl")
+library("pscl")
+###
+zeroinfl_poisson <- zeroinfl(Matings ~ Age, data=elephant, distribution="poisson")
+summary(zeroinfl_poisson)
+## Answer:
+#Call:
+#zeroinfl(formula = Matings ~ Age, data = elephant, distribution = "poisson")
+
+#Pearson residuals:
+#  Min       1Q   Median       3Q      Max 
+#-1.98529 -0.80156 -0.07509  0.66683  2.54805 
+#
+#Count model coefficients (poisson with log link):
+#  Estimate Std. Error z value Pr(>|z|)    
+#(Intercept) -1.44743    0.55141  -2.625  0.00867 ** 
+#  Age          0.06556    0.01392   4.709 2.49e-06 ***
+#  
+#  Zero-inflation model coefficients (binomial with logit link):
+#  Estimate Std. Error z value Pr(>|z|)
+#(Intercept)   301.13     463.48   0.650    0.516
+#Age           -10.98      16.85  -0.652    0.515
+#---
+#  Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+#
+#Number of iterations in BFGS optimization: 568 
+#Log-likelihood: -74.9 on 4 Df
+
+##################################################################################################################################
+##################################################################################################################################
+#################################################### ##########################################################################
+### REPLICATION PROJECT
+`dataset (1)` <- readRDS("C:/Users/idiam/Downloads/dataset (1).rds")
+`dataset (1)`
+names(`dataset (1)`)

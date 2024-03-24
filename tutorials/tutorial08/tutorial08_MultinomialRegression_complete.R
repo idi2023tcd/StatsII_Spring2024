@@ -1,11 +1,47 @@
 ##############
 # Tutorial 5 Ordered and Multinomial Logistic Regression #
 ##############
+###################
+# remove objects
+rm(list=ls())
+# detach all libraries
+detachAllPackages <- function() {
+  basic.packages <- c("package:stats", "package:graphics", "package:grDevices", "package:utils", "package:datasets", "package:methods", "package:base")
+  package.list <- search()[ifelse(unlist(gregexpr("package:", search()))==1, TRUE, FALSE)]
+  package.list <- setdiff(package.list, basic.packages)
+  if (length(package.list)>0)  for (package in package.list) detach(package,  character.only=TRUE)
+}
+detachAllPackages()
 
+# load libraries
+pkgTest <- function(pkg){
+  new.pkg <- pkg[!(pkg %in% installed.packages()[,  "Package"])]
+  if (length(new.pkg)) 
+    install.packages(new.pkg,  dependencies = TRUE)
+  sapply(pkg,  require,  character.only = TRUE)
+}
+
+# here is where you load any necessary packages
+# ex: stringr
+# lapply(c("stringr"),  pkgTest)
+
+lapply(c(),  pkgTest)
+
+# set wd for current folder
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+###########
 library(MASS)
 library(nnet)
 library(ggplot2)
+###########################
 
+#### LOAD THE workingmum dataset
+
+workingMoms <- read.table("http://statmath.wu.ac.at/courses/StatsWithR/WorkingMoms.txt", header=T)
+head(workingMoms)
+dim(workingMoms)# Rows/Columns=2293; Columns/Variables=7
+names(workingMoms) # "age";   "education";  "prestige";   "gender";    "year"  ;    "race" ;     "attitude" 
+#########
 # EDA
 summary(workingMoms)
 ftable(xtabs(~ gender + year + attitude, data = workingMoms))
@@ -27,11 +63,14 @@ workingMoms$year <- factor(workingMoms$year,
 
 ftable(xtabs(~ gender + year + attitude, data = workingMoms))
 
-ggplot(workingMoms, aes(attitude, prestige)) +
+ggplot(workingMoms, aes(x=attitude, y=prestige, fill=attitude)) +
   geom_boxplot() +
+  stat_boxplot(geom="errorbar", width=0.5)+
+  geom_point()+
   geom_jitter(alpha = 0.3) +
   scale_x_discrete(labels=function(x){sub("\\s", "\n", x)}) +
   theme(axis.text.x = element_text(angle = 45)) +
+  theme_bw()+
   facet_grid(gender ~ year)
 
 # a) Perform an ordered (proportional odds) logistic regression
@@ -43,7 +82,13 @@ summary(ord.log)
 ctable <- coef(summary(ord.log))
 p <- pnorm(abs(ctable[, "t value"]), lower.tail = FALSE) * 2
 (ctable <- cbind(ctable, "p value" = p))
-
+##
+# My Method of calculating p-value:
+ctable2 <- coef(summary(ord.log)) # Extract coefficient summary
+p <- 2 * (1 - pnorm(abs(ctable2[, "t value"]))) # Calculate the p-value
+ctable2 <- cbind(ctable2, "p-value" = p) ## Combine coefficient summary and p-values
+print(ctable2) # Print the results 
+##
 # Calculate confidence intervals
 (ci <- confint(ord.log))
 

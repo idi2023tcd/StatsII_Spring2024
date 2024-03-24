@@ -16,7 +16,9 @@ lapply(c("tidyverse"),  pkgTest)
 #  Option 1: 
 #  Using stringsAsFactors
 graduation <- read.table("http://statmath.wu.ac.at/courses/StatsWithR/Powers.txt",
-                         stringsAsFactors = TRUE)
+                        stringsAsFactors = TRUE)
+head(graduation) 
+
 #  Option 2: 
 #  Parse column names as a vector to colClasses
 graduation <- read.table("http://statmath.wu.ac.at/courses/StatsWithR/Powers.txt",
@@ -25,15 +27,24 @@ graduation <- read.table("http://statmath.wu.ac.at/courses/StatsWithR/Powers.txt
                                         "mhs" = "factor",
                                         "fhs" = "factor",
                                         "intact" = "factor"))
+head(graduation)
+##
 summary(graduation)
 
 # Drop problematic cases
 graduation <- graduation[-which(graduation$nsibs < 0),]
-
+head(graduation)
+#
 #  Option 3: 
 #  Coerce from a character vector to a logical vector
 graduation$hsgrad <- as.logical(as.numeric(as.factor(graduation$hsgrad))-1) 
-
+head(graduation$hsgrad)
+####
+with(graduation, table(graduation$hsgrad))
+##Answer
+# FALSE  TRUE 
+#   289  1352 
+###
 #  Option 4: 
 #  Use ifelse() with as.logical()...
 as.logical(ifelse(graduation$hsgrad == "Yes", 1, 0))
@@ -54,6 +65,7 @@ summary(mod)
 nullMod <- glm(hsgrad ~ 1, # 1 = fit an intercept only (i.e. sort of a "mean") 
                data = graduation, 
                family = "binomial")
+nullMod
 
 #  Run an anova test on the model compared to the null model 
 anova(nullMod, mod, test = "Chisq")
@@ -67,13 +79,30 @@ exp(confint(mod)) # Remember: transform to odds ratio using exp()
 confMod <- data.frame(cbind(lower = exp(confint(mod)[,1]), 
                             coefs = exp(coef(mod)), 
                             upper = exp(confint(mod)[,2])))
-
+confMod
+##################################################################################
+##########################################################
 # Then use this to make a plot
-ggplot(data = confMod, mapping = aes(x = row.names(confMod), y = coefs)) +
+##
+install.packages("plotly") # For interactive plot
+library("plotly")
+###
+p=ggplot(data = confMod, mapping = aes(x = row.names(confMod), y = coefs)) +
   geom_point() +
   geom_errorbar(aes(ymin = lower, ymax = upper), colour = "red") + 
   coord_flip() +
-  labs(x = "Terms", y = "Coefficients")
+  labs(x = "Terms", y = "Coefficients")+
+  theme_bw() + theme(panel.grid=element_blank())+
+  ggtitle("Confidence interval plot")
+p
+###
+ggplotly(p)
+##
+#Convert the static plot into plottly:
+
+install.packages('plotly')
+library(plotly)
+#
 
 # Looking at this plot, which terms are significant at the 0.05 level?
 
@@ -144,4 +173,7 @@ ggplot(data = confMod3, mapping = aes(x = row.names(confMod3), y = coefs)) +
   geom_errorbar(aes(ymin = lower, ymax = upper), colour = "red") +
   coord_flip() +
   scale_y_continuous(breaks = seq(0,8,1)) +
-  labs(x = "Terms", y = "Coefficients")
+  labs(x = "Terms", y = "Coefficients")+
+  theme_bw() + theme(panel.grid=element_blank()) +
+  ggtitle('Confidence Interval Plot')
+  

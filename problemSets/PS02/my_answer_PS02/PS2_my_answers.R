@@ -92,7 +92,6 @@ summary(fit_myFull_logit_supporting_policy)
 #Null deviance: 11783  on 8499  degrees of freedom
 #Residual deviance: 11568  on 8494  degrees of freedom
 #AIC: 11580
-#
 #Number of Fisher Scoring iterations: 4
 
 #################################################################################
@@ -165,7 +164,7 @@ my_lr_test
 # Extract p-value for the global null hypothesis
 
 my_global_null_p_value <- my_lr_test$"Pr(>Chi)"
-print(my_global_null_p_value) # Print the p-value
+print(my_global_null_p_value) 
 ## 
 ## Answer: 1.378383e-32 9.271817e-15
 ####################################################################
@@ -186,11 +185,11 @@ print(my_global_null_p_value) # Print the p-value
 # To answer question (2a) we need to extract from general equation the following:
 ##
 #logit(p_5%/(1-p_5%))= -0.2726631 + 0.6483497*countries_[160 of 192] + 0.1918553*sanctions_5% # Transform r.h.s into Rcode
-my_5 <- -0.2726631 + 0.6483497*1 + 0.1918553*1
+my_5 <- -0.2726631 + 0.6483497*1 + 0.1918553*1 
 my_5 # Answer: 0.5675419
 ##########
 #logit(p_15%/(1-p_15%))=-0.2726631 + 0.6483497*countries_[160 of 192] - 0.1332475*sanctions_15% 
-my_15 <- -0.2726631 + 0.6483497 - 0.1332475
+my_15 <- -0.2726631 + 0.6483497 - 0.1332475 
 my_15 # Answer:  0.2424391
 ####
 #Now I am going to calculate the difference between my_15 and my_15
@@ -273,7 +272,7 @@ summary(fit_interaction_logit)
 #      data = pset2_data)
 
 #Coefficients:
-#  Estimate Std. Error z value Pr(>|z|)    
+#                                   Estimate Std. Error z value Pr(>|z|)    
 #(Intercept)                      -0.27469    0.07534  -3.646 0.000267 ***
 #  countries80 of 192                0.37562    0.10627   3.535 0.000408 ***
 #  countries160 of 192               0.61266    0.10801   5.672 1.41e-08 ***
@@ -342,7 +341,7 @@ summary(logit.fit.reduced)
 
 #Number of Fisher Scoring iterations: 4
 
-############################################################################################
+
 ##### Extra work: Data Visualization - Plotting an interactive graphic using packages effects and plotly
 #####
 # Load the necessary libraries

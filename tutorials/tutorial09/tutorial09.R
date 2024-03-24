@@ -54,3 +54,4 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 # Is there evidence for over-dispersion? How, if at all, do the results change when over-dispersion is taken into account
 
 long_data <- read.table("http://statmath.wu.ac.at/courses/StatsWithR/Long.txt", header=T)
+head(long_data)
