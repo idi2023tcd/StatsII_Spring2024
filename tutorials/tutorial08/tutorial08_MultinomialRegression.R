@@ -57,7 +57,7 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 
 workingMoms <- read.table("http://statmath.wu.ac.at/courses/StatsWithR/WorkingMoms.txt", header=T)
-
+head(workingMoms)
 
 
 # (a) Perform an ordered (proportional odds) logistic regression of attitude toward working mothers on the other variables.

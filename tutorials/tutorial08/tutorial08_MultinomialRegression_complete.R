@@ -45,7 +45,8 @@ names(workingMoms) # "age";   "education";  "prestige";   "gender";    "year"  ;
 # EDA
 summary(workingMoms)
 ftable(xtabs(~ gender + year + attitude, data = workingMoms))
-
+##
+table(workingMoms$gender)
 # do some wrangling
 workingMoms$attitude <- factor(workingMoms$attitude, 
                                levels = c("SD", "D", "A", "SA"),
@@ -60,6 +61,7 @@ workingMoms$race <- factor(workingMoms$race,
 workingMoms$year <- factor(workingMoms$year,
                            levels = c("Year1977", "Year1989"),
                            labels = c("1977", "1989"))
+head(workingMoms)
 
 ftable(xtabs(~ gender + year + attitude, data = workingMoms))
 

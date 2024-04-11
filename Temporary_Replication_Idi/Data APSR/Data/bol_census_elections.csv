@@ -1,0 +1,336 @@
+"","Departamento","Provincia","Municipio","PobRuralProp2001","mas_per2002"
+"1","Beni","Cercado","San Javier",1,0.004
+"2","Beni","Cercado","Trinidad",0.055313082300564,0.0211
+"3","Beni","Iténez","Baures",0.539893617021277,0.0085
+"4","Beni","Iténez","Huacaraje",1,0.001
+"5","Beni","Iténez","Magdalena",0.35446104158256,0.0109
+"6","Beni","José Ballivián","Reyes",0.440819627932057,0.0109
+"7","Beni","José Ballivián","Rurrenabaque",0.381035996488148,0.1912
+"8","Beni","José Ballivián","San Borja",0.436516020137939,0.1008
+"9","Beni","José Ballivián","Santa Rosa",0.553904170363798,0.0214
+"10","Beni","Mamoré","Puerto Siles",1,0
+"11","Beni","Mamoré","San Joaquin",0.354732208363903,0.0025
+"12","Beni","Mamoré","San Ramon",0.353298464653282,0
+"13","Beni","Marbán","Loreto",1,0.0044
+"14","Beni","Marbán","San Andres",1,0.0314
+"15","Beni","Moxos","San Ignacio",0.589105022409093,0.0347
+"16","Beni","Vaca Díez","Guayaramerin",0.181708040747701,0.0116
+"17","Beni","Vaca Díez","Riberalta",0.150914092422707,0.0294
+"18","Beni","Yacuma","Exaltacion",1,0.003
+"19","Beni","Yacuma","Santa Ana de Yacuma",0.309692291197598,0.0047
+"20","Chuquisaca","Belisario Boeto","Villa Serrano",0.765659363036572,0.1285
+"21","Chuquisaca","Hernando Siles","Huacareta",1,0.0308
+"22","Chuquisaca","Hernando Siles","Monteagudo",0.72513582855418,0.0739
+"23","Chuquisaca","Jaime Zudáñez","Icla",1,0.3362
+"24","Chuquisaca","Jaime Zudáñez","Mojocoya",1,0.3169
+"25","Chuquisaca","Jaime Zudáñez","Presto",1,0.3394
+"26","Chuquisaca","Jaime Zudáñez","Zudanez",1,0.132
+"27","Chuquisaca","Juana Azurduy de Padilla","Azurduy",1,0.1274
+"28","Chuquisaca","Juana Azurduy de Padilla","Tarvita",1,0.3825
+"29","Chuquisaca","Luis Calvo","Huacaya",1,0.008
+"30","Chuquisaca","Luis Calvo","Machareti",1,0.0256
+"31","Chuquisaca","Luis Calvo","Villa Vaca Guzman",0.78349460364719,0.0578
+"32","Chuquisaca","Nor Cinti","Camargo",0.67863516310943,0.0583
+"33","Chuquisaca","Nor Cinti","Incahuasi",1,0.0808
+"34","Chuquisaca","Nor Cinti","San Lucas",1,0.1104
+"35","Chuquisaca","Oropeza","Poroma",1,0.492
+"36","Chuquisaca","Oropeza","Sucre",0.101502470131339,0.1681
+"37","Chuquisaca","Oropeza","Yotala",1,0.333
+"38","Chuquisaca","Sud Cinti","Villa Abecia",1,0.0689
+"39","Chuquisaca","Sud Cinti","Culpina",0.88030734206033,0.0642
+"40","Chuquisaca","Sud Cinti","Las Carreras",1,0.0454
+"41","Chuquisaca","Tomina","El Villar",1,0.1358
+"42","Chuquisaca","Tomina","Padilla",0.783951600063684,0.0923
+"43","Chuquisaca","Tomina","Sopachui",1,0.2569
+"44","Chuquisaca","Tomina","Tomina",1,0.1961
+"45","Chuquisaca","Tomina","Villa Alcala",1,0.1341
+"46","Chuquisaca","Yamparaéz","Tarabuco",0.875115065971157,0.3911
+"47","Chuquisaca","Yamparaéz","Yamparaez",1,0.2331
+"48","Cochabamba","Arani","Arani",0.695719979206377,0.3948
+"49","Cochabamba","Arani","Vacas",1,0.6805
+"50","Cochabamba","Arque","Arque",1,0.5744
+"51","Cochabamba","Arque","Tacopaya",1,0.5499
+"52","Cochabamba","Ayopaya","Ayopaya",0.924920782851817,0.5945
+"53","Cochabamba","Ayopaya","Cocapata",NA,NA
+"54","Cochabamba","Ayopaya","Morochata",1,0.7186
+"55","Cochabamba","Bolívar","Bolivar",1,0.5304
+"56","Cochabamba","Capinota","Capinota",0.558158748893479,0.5211
+"57","Cochabamba","Capinota","Santivanez",1,0.5742
+"58","Cochabamba","Capinota","Sicaya",1,0.6928
+"59","Cochabamba","Carrasco","Chimore",0.746200209643606,0.6383
+"60","Cochabamba","Carrasco","Entre Rios",NA,NA
+"61","Cochabamba","Carrasco","Pocona",1,0.621
+"62","Cochabamba","Carrasco","Pojo",0.823154343226397,0.8044
+"63","Cochabamba","Carrasco","Puerto Villarroel",0.838908851662533,0.8059
+"64","Cochabamba","Carrasco","Totora",1,0.7495
+"65","Cochabamba","Cercado","Cochabamba",0.000659543850962431,0.2335
+"66","Cochabamba","Chapare","Colomi",0.772537203296028,0.7368
+"67","Cochabamba","Chapare","Sacaba",0.209385140905209,0.4074
+"68","Cochabamba","Chapare","Villa Tunari",0.916456774575894,0.8437
+"69","Cochabamba","Esteban Arce","Anzaldo",1,0.5288
+"70","Cochabamba","Esteban Arce","Arbieto",1,0.3739
+"71","Cochabamba","Esteban Arce","Sacabamba",1,0.3561
+"72","Cochabamba","Esteban Arce","Tarata",0.618703384968445,0.4157
+"73","Cochabamba","Germán Jordán","Cliza",0.557823129251701,0.1745
+"74","Cochabamba","Germán Jordán","Toco",1,0.3081
+"75","Cochabamba","Germán Jordán","Tolata",0.584838224228743,0.2367
+"76","Cochabamba","Mizque","Alalay",1,0.6067
+"77","Cochabamba","Mizque","Mizque",0.899583630293709,0.6552
+"78","Cochabamba","Mizque","Vila Vila",1,0.6992
+"79","Cochabamba","Narciso Campero","Aiquile",0.719150717248202,0.4625
+"80","Cochabamba","Narciso Campero","Omereque",1,0.4902
+"81","Cochabamba","Narciso Campero","Pasorapa",1,0.0796
+"82","Cochabamba","Punata","Cuchumuela",1,0.6191
+"83","Cochabamba","Punata","Punata",0.436036725325172,0.2537
+"84","Cochabamba","Punata","San Benito",0.840487421383648,0.3854
+"85","Cochabamba","Punata","Tacachi",1,0.4308
+"86","Cochabamba","Punata","Villa Rivero",1,0.5164
+"87","Cochabamba","Quillacollo","Colcapirhua",0.00817055740828966,0.2733
+"88","Cochabamba","Quillacollo","Quillacollo",0.248373414198799,0.3211
+"89","Cochabamba","Quillacollo","Sipesipe",0.8999904266522,0.5844
+"90","Cochabamba","Quillacollo","Tiquipaya",0.292635812759652,0.3981
+"91","Cochabamba","Quillacollo","Vinto",0.549684016640732,0.4256
+"92","Cochabamba","Tapacarí","Tapacari",1,0.5771
+"93","Cochabamba","Tiraque","Shinahota",NA,NA
+"94","Cochabamba","Tiraque","Tiraque",0.877459519661879,0.765
+"95","La Paz","Abel Iturralde","Ixiamas",1,0.0989
+"96","La Paz","Abel Iturralde","San Buenaventura",0.635015315170079,0.1225
+"97","La Paz","Aroma","Ayo Ayo",1,0.2716
+"98","La Paz","Aroma","Calamarca",1,0.1931
+"99","La Paz","Aroma","Collana",1,0.2592
+"100","La Paz","Aroma","Colquencha",0.706733167082294,0.139
+"101","La Paz","Aroma","Patacamaya",0.580118768401617,0.2525
+"102","La Paz","Aroma","Sica Sica",0.745805056305466,0.4202
+"103","La Paz","Aroma","Umala",1,0.3206
+"104","La Paz","Bautista Saavedra","Curva",1,0.2268
+"105","La Paz","Bautista Saavedra","Charazani",1,0.2811
+"106","La Paz","Caranavi","Caranavi",0.763787070162063,0.5147
+"107","La Paz","Eliodoro Camacho","Escoma",NA,NA
+"108","La Paz","Eliodoro Camacho","Mocomoco",1,0.2235
+"109","La Paz","Eliodoro Camacho","Puerto Acosta",1,0.237
+"110","La Paz","Eliodoro Camacho","Pto. Carabuco",1,0.2045
+"111","La Paz","Franz Tamayo","Apolo",0.840027126817874,0.3453
+"112","La Paz","Franz Tamayo","Pelechuco",1,0.2337
+"113","La Paz","Gualberto Villarroel","Chacarilla",1,0.2394
+"114","La Paz","Gualberto Villarroel","Papel Pampa",1,0.3668
+"115","La Paz","Gualberto Villarroel","San Pedro de Curahuara",1,0.3758
+"116","La Paz","Ingavi","Desaguadero",0.554507127082915,0.1349
+"117","La Paz","Ingavi","Guaqui",1,0.2497
+"118","La Paz","Ingavi","Jesus de Machaca",NA,NA
+"119","La Paz","Ingavi","San Andres de Machaca",NA,NA
+"120","La Paz","Ingavi","Taraco",NA,NA
+"121","La Paz","Ingavi","Tiahuanacu",1,0.1656
+"122","La Paz","Ingavi","Viacha",0.559916543194944,0.1682
+"123","La Paz","Inquisivi","Cajuata",1,0.5931
+"124","La Paz","Inquisivi","Colquiri",0.785641629637561,0.4348
+"125","La Paz","Inquisivi","Ichoca",1,0.2968
+"126","La Paz","Inquisivi","Inquisivi",1,0.4387
+"127","La Paz","Inquisivi","Quime",0.667620605069501,0.4181
+"128","La Paz","Inquisivi","Villa Libertad Licoma",1,0.5279
+"129","La Paz","José Manuel Pando","Catacora",1,0.191
+"130","La Paz","José Manuel Pando","Santiago de Machaca",1,0.1772
+"131","La Paz","Larecaja","Combaya",1,0.1815
+"132","La Paz","Larecaja","Guanay",0.772571831482461,0.2273
+"133","La Paz","Larecaja","Mapiri",NA,NA
+"134","La Paz","Larecaja","Quiabaya",1,0.3516
+"135","La Paz","Larecaja","Sorata",0.88289668286499,0.3263
+"136","La Paz","Larecaja","Tacacoma",1,0.4942
+"137","La Paz","Larecaja","Teoponte",NA,NA
+"138","La Paz","Larecaja","Tipuani",0.725029503272181,0.1387
+"139","La Paz","Loayza","Cairoma",1,0.2587
+"140","La Paz","Loayza","Luribay",1,0.3309
+"141","La Paz","Loayza","Malla",1,0.1683
+"142","La Paz","Loayza","Sapahaqui",1,0.2395
+"143","La Paz","Loayza","Yaco",1,0.1894
+"144","La Paz","Los Andes","Batallas",1,0.1942
+"145","La Paz","Los Andes","Laja",1,0.1815
+"146","La Paz","Los Andes","Pucarani",1,0.1525
+"147","La Paz","Los Andes","Puerto Perez",1,0.1763
+"148","La Paz","Manco Kapac","Copacabana",0.714726450020568,0.2408
+"149","La Paz","Manco Kapac","San Pedro de Tiquina",1,0.019
+"150","La Paz","Manco Kapac","Tito Yupanqui",1,0.2555
+"151","La Paz","Muñecas","Aucapata",1,0.1932
+"152","La Paz","Muñecas","Ayata",1,0.115
+"153","La Paz","Muñecas","Chuma",1,0.0955
+"154","La Paz","Nor Yungas","Coripata",0.807322614470465,0.3593
+"155","La Paz","Nor Yungas","Coroico",0.820462531666258,0.4205
+"156","La Paz","Omasuyos","Achacachi",0.893054196275336,0.1795
+"157","La Paz","Omasuyos","Villa Ancoraimes",1,0.14
+"158","La Paz","Omasuyos","Huarina",NA,NA
+"159","La Paz","Omasuyos","Santiago de Huata",NA,NA
+"160","La Paz","Pacajes","Calacoto",1,0.232
+"161","La Paz","Pacajes","Caquiaviri",1,0.1368
+"162","La Paz","Pacajes","Charana",1,0.2959
+"163","La Paz","Pacajes","Comanche",1,0.1393
+"164","La Paz","Pacajes","Corocoro",1,0.2011
+"165","La Paz","Pacajes","Humanata",NA,NA
+"166","La Paz","Pacajes","Nazacara de Pacajes",1,0.1086
+"167","La Paz","Pacajes","Santiago de Callapa",1,0.2162
+"168","La Paz","Pacajes","Waldo Ballivian",1,0.1757
+"169","La Paz","Pedro Domingo Murillo","Achocalla",0.313765718067505,0.3541
+"170","La Paz","Pedro Domingo Murillo","El Alto",0.00401256696586549,0.2785
+"171","La Paz","Pedro Domingo Murillo","La Paz",0.0046741872170812,0.1611
+"172","La Paz","Pedro Domingo Murillo","Mecapaca",1,0.2267
+"173","La Paz","Pedro Domingo Murillo","Palca",1,0.1864
+"174","La Paz","Sud Yungas","Chulumani",0.793698879127537,0.3337
+"175","La Paz","Sud Yungas","Irupana",1,0.4444
+"176","La Paz","Sud Yungas","La Asunta",1,0.52
+"177","La Paz","Sud Yungas","Palos Blancos",0.82259900545204,0.4665
+"178","La Paz","Sud Yungas","Yanacachi",1,0.3371
+"179","Oruro","Atahuallpa","Chipaya",1,0.1881
+"180","Oruro","Atahuallpa","Coipasa",1,0.2058
+"181","Oruro","Atahuallpa","Sabaya",1,0.5583
+"182","Oruro","Carangas","Choque Cota",1,0.4083
+"183","Oruro","Carangas","Corque",1,0.4258
+"184","Oruro","Cercado","Caracollo",0.777844914400806,0.4801
+"185","Oruro","Cercado","El Choro",1,0.3104
+"186","Oruro","Cercado","Oruro",0.0669108782342576,0.2312
+"187","Oruro","Cercado","Paria",NA,NA
+"188","Oruro","Eduardo Avaroa","Challapata",0.684735330324169,0.4249
+"189","Oruro","Eduardo Avaroa","Santuario de Quillacas",1,0.3708
+"190","Oruro","Ladislao Cabrera","Pampa Aullagas",1,0.5279
+"191","Oruro","Ladislao Cabrera","Salinas de Garci Mendoza",1,0.541
+"192","Oruro","Litoral","Cruz de Machacamarca",1,0.1868
+"193","Oruro","Litoral","Escara",1,0.3614
+"194","Oruro","Litoral","Esmeralda",1,0.4573
+"195","Oruro","Litoral","Huachacalla",1,0.1008
+"196","Oruro","Litoral","Yunguyo de Litoral",1,0.2686
+"197","Oruro","Nor Carangas","Huayllamarca",1,0.3578
+"198","Oruro","Pantaleón Dalence","Huanuni",0.222462425365452,0.358
+"199","Oruro","Pantaleón Dalence","Machacamarca",0.472248803827751,0.2796
+"200","Oruro","Poopó","Antequera",1,0.2721
+"201","Oruro","Poopó","Pazna",1,0.2914
+"202","Oruro","Poopó","Poopo",1,0.3189
+"203","Oruro","Puerto de Mejillones","Carangas",1,0.0892
+"204","Oruro","Puerto de Mejillones","La Rivera",1,0.3645
+"205","Oruro","Puerto de Mejillones","Todos Santos",1,0.223
+"206","Oruro","Sajama","Curahuara de Carangas",1,0.4573
+"207","Oruro","Sajama","Turco",1,0.3937
+"208","Oruro","San Pedro de Totora","Totora",1,0.4093
+"209","Oruro","Saucarí","Toledo",1,0.4806
+"210","Oruro","Sebastián Pagador","Santiago de Huari",0.706584482927307,0.3663
+"211","Oruro","Sud Carangas","Belen de Andamarca",1,0.3144
+"212","Oruro","Sud Carangas","Andamarca",1,0.6517
+"213","Oruro","Tomás Barrón","Eucaliptus",0.543879056047198,0.4856
+"214","Pando","Abuná","Ingavi",1,0
+"215","Pando","Abuná","Santa Rosa",1,0.0257
+"216","Pando","Federico Román","Nueva Esperanza",1,0.0107
+"217","Pando","Federico Román","Santos Mercado",1,0
+"218","Pando","Federico Román","Villa Nueva",1,0.0127
+"219","Pando","Madre de Dios","Puerto Gonzalo Moreno",1,0.0082
+"220","Pando","Madre de Dios","San Lorenzo",1,0.0019
+"221","Pando","Madre de Dios","Sena",1,0.0195
+"222","Pando","Manuripi","Filadelfia",1,0.0131
+"223","Pando","Manuripi","Puerto Rico",1,0.0169
+"224","Pando","Manuripi","San Pedro",1,0
+"225","Pando","Nicolás Suárez","Bella Flor",1,0.0125
+"226","Pando","Nicolás Suárez","Bolpebra",1,0.0233
+"227","Pando","Nicolás Suárez","Cobija",0.0673714388102491,0.0426
+"228","Pando","Nicolás Suárez","Porvenir",1,0.0149
+"229","Potosi","Alonzo de Ibáñez","Caripuyo",1,0.6476
+"230","Potosi","Alonzo de Ibáñez","Sacaca",1,0.546
+"231","Potosi","Antonio Quijarro","Porco",1,0.1288
+"232","Potosi","Antonio Quijarro","Tomave",1,0.2797
+"233","Potosi","Antonio Quijarro","Uyuni",0.4359,0.2066
+"234","Potosi","Bernardino Bilbao","Acasio",1,0.546
+"235","Potosi","Bernardino Bilbao","Arampampa",1,0.783
+"236","Potosi","Charcas","Buena Vista",1,0.5472
+"237","Potosi","Charcas","Toro Toro",1,0.7847
+"238","Potosi","Chayanta","Colquechaca",1,0.2985
+"239","Potosi","Chayanta","Ocuri",1,0.3793
+"240","Potosi","Chayanta","Pocoata",1,0.5024
+"241","Potosi","Chayanta","Ravelo",1,0.5975
+"242","Potosi","Cornelio Saavedra","Betanzos",0.885204362674893,0.3957
+"243","Potosi","Cornelio Saavedra","Chaqui",1,0.3582
+"244","Potosi","Cornelio Saavedra","Tacobamba",1,0.5184
+"245","Potosi","Daniel Campos","Llica",1,0.3144
+"246","Potosi","Daniel Campos","Tahua",1,0.2392
+"247","Potosi","Enrique Baldivieso","San Agustin",1,0.2798
+"248","Potosi","José María Linares","Caiza ""D""",1,0.2863
+"249","Potosi","José María Linares","Ckochas",NA,NA
+"250","Potosi","José María Linares","Puna",1,0.3703
+"251","Potosi","Modesto Omiste","Villazon",0.2267,0.164
+"252","Potosi","Nor Chichas","Cotagaita",1,0.0915
+"253","Potosi","Nor Chichas","Vitiche",1,0.175
+"254","Potosi","Nor Lípez","Colcha ""K""",1,0.2244
+"255","Potosi","Nor Lípez","San Pedro de Quemes",1,0.1628
+"256","Potosi","Rafael Bustillo","Chayanta",0.853723967525591,0.4213
+"257","Potosi","Rafael Bustillo","Chuquiuta",NA,NA
+"258","Potosi","Rafael Bustillo","Llallagua",0.205424151291013,0.3639
+"259","Potosi","Rafael Bustillo","Uncia",0.773272438443209,0.3521
+"260","Potosi","Sud Chichas","Atocha",0.524119127516778,0.069
+"261","Potosi","Sud Chichas","Tupiza",0.433784594517046,0.0822
+"262","Potosi","Sud Lípez","Mojinete",1,0.0576
+"263","Potosi","Sud Lípez","San Antonio de Esmoruco",1,0.0592
+"264","Potosi","Sud Lípez","San Pablo de Lopez",1,0.1167
+"265","Potosi","Tomás Frías","Potosi",0.083353440371716,0.1449
+"266","Potosi","Tomás Frías","Tinguipaya",1,0.4456
+"267","Potosi","Tomás Frías","Urmiri",1,0.3824
+"268","Potosi","Tomás Frías","Yocalla",1,0.3402
+"269","Santa Cruz","Andrés Ibáñez","Cotoca",0.520054907343857,0.0849
+"270","Santa Cruz","Andrés Ibáñez","El Torno",0.501198598561682,0.2791
+"271","Santa Cruz","Andrés Ibáñez","La Guardia",0.356012338187702,0.1405
+"272","Santa Cruz","Andrés Ibáñez","Porongo",1,0.1553
+"273","Santa Cruz","Andrés Ibáñez","Santa Cruz de la Sierra",0.0171435968881382,0.0747
+"274","Santa Cruz","Angel Sandóval","San Matias",0.589229710089497,0.0172
+"275","Santa Cruz","Chiquitos","Pailon",0.744725058212431,0.1081
+"276","Santa Cruz","Chiquitos","Robore",0.349146981627297,0.0204
+"277","Santa Cruz","Chiquitos","San Jose de Chiquitos",0.445087053436954,0.0122
+"278","Santa Cruz","Cordillera","Boyuibe",0.278838997767303,0.0098
+"279","Santa Cruz","Cordillera","Cabezas",0.900520272694654,0.0964
+"280","Santa Cruz","Cordillera","Camiri",0.142149723274104,0.0267
+"281","Santa Cruz","Cordillera","Charagua",0.887951856552176,0.0463
+"282","Santa Cruz","Cordillera","Cuevo",1,0.0072
+"283","Santa Cruz","Cordillera","Gutierrez",1,0.0383
+"284","Santa Cruz","Cordillera","Lagunillas",1,0.0409
+"285","Santa Cruz","Florida","Mairana",0.498644636633536,0.1672
+"286","Santa Cruz","Florida","Pampa Grande",0.669607966721291,0.2391
+"287","Santa Cruz","Florida","Quirusillas",1,0.0313
+"288","Santa Cruz","Florida","Samaipata",0.699558476229592,0.1245
+"289","Santa Cruz","German Busch","Carmen Rivero Torrez",NA,NA
+"290","Santa Cruz","German Busch","Puerto Quijarro",0.0283654963961869,0.0748
+"291","Santa Cruz","German Busch","Puerto Suarez",0.290503904889817,0.0209
+"292","Santa Cruz","Guarayos","Ascencion de Guarayos",0.276731040979746,0.0776
+"293","Santa Cruz","Guarayos","El Puente",1,0.1759
+"294","Santa Cruz","Guarayos","Urubicha",0.459060402684564,0.0031
+"295","Santa Cruz","Ichilo","Buena Vista",0.712800421909139,0.2475
+"296","Santa Cruz","Ichilo","San Carlos",0.492022002886904,0.277
+"297","Santa Cruz","Ichilo","San Juan",NA,NA
+"298","Santa Cruz","Ichilo","Yapacani",0.537415181685586,0.5433
+"299","Santa Cruz","Ignacio Warnes","Okinawa Uno",0.648572163622331,0.0675
+"300","Santa Cruz","Ignacio Warnes","Warnes",0.570074573009382,0.0999
+"301","Santa Cruz","José Miguel de Velasco","San Ignacio de Velasco",0.531512605042017,0.0321
+"302","Santa Cruz","José Miguel de Velasco","San Miguel de Velasco",0.563516012849216,0.0175
+"303","Santa Cruz","José Miguel de Velasco","San Rafael",0.589994020330875,0.0234
+"304","Santa Cruz","Manuel María Caballero","Comarapa",0.72087312414734,0.3298
+"305","Santa Cruz","Manuel María Caballero","Saipina",0.552523364485981,0.2929
+"306","Santa Cruz","Ñuflo de Chávez","Concepcion",0.61534223936097,0.1513
+"307","Santa Cruz","Ñuflo de Chávez","Cuatro Canadas",NA,NA
+"308","Santa Cruz","Ñuflo de Chávez","San Antonio de Lomerio",1,0.217
+"309","Santa Cruz","Ñuflo de Chávez","San Javier",0.510604453870626,0.1897
+"310","Santa Cruz","Ñuflo de Chávez","San Julian",0.8015158524001,0.509
+"311","Santa Cruz","Ñuflo de Chávez","San Ramon",0.161484098939929,0.1488
+"312","Santa Cruz","Obispo Santistevan","Fernandez Alonso",NA,NA
+"313","Santa Cruz","Obispo Santistevan","Mineros",0.413844241380062,0.2387
+"314","Santa Cruz","Obispo Santistevan","Montero",0.0254788962049265,0.1301
+"315","Santa Cruz","Obispo Santistevan","General Saavedra",0.779230954676953,0.0968
+"316","Santa Cruz","Obispo Santistevan","San Pedro",NA,NA
+"317","Santa Cruz","Sara","Colpa Belgica",NA,NA
+"318","Santa Cruz","Sara","Portachuelo",0.278294607821525,0.0204
+"319","Santa Cruz","Sara","Santa Rosa del Sara",0.72634865798565,0.2961
+"320","Santa Cruz","Vallegrande","Moro Moro",1,0.0964
+"321","Santa Cruz","Vallegrande","Postrervalle",1,0.0044
+"322","Santa Cruz","Vallegrande","Pucara",1,0.0346
+"323","Santa Cruz","Vallegrande","Trigal",1,0.0515
+"324","Santa Cruz","Vallegrande","Vallegrande",0.536675179663836,0.063
+"325","Tarija","Aniceto Arce","Bermejo",0.217682377664365,0.0453
+"326","Tarija","Aniceto Arce","Padcaya",1,0.1645
+"327","Tarija","Burnet O'Connor","Entre Rios",0.874967681886344,0.0594
+"328","Tarija","Cercado","Tarija",0.1151723284047,0.0545
+"329","Tarija","Eutaquio Méndez","El Puente",1,0.0961
+"330","Tarija","Eutaquio Méndez","San Lorenzo",0.871251461988304,0.0803
+"331","Tarija","Gran Chaco","Carapari",1,0.0416
+"332","Tarija","Gran Chaco","Villa Montes",0.321986114033242,0.0215
+"333","Tarija","Gran Chaco","Yacuiba",0.22638233674178,0.066
+"334","Tarija","José María Avilés","Uriondo",1,0.0672
+"335","Tarija","José María Avilés","Yunchara",1,0.1003
